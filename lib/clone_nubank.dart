@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clone_nubank/parte_traz.dart';
+import 'package:flip_card/flip_card.dart';
 
 class CloneNubank extends StatefulWidget {
   @override
@@ -24,8 +25,12 @@ class _CloneNubankState extends State<CloneNubank> {
       backgroundColor: Color.fromRGBO(153, 51, 153, 0.5),
       body: SafeArea(
         child: GestureDetector(
-          child: _vira ? stackFrente() : stackTraz(),
-          onTap: () => setState(() => _vira = !_vira),
+          child: FlipCard(
+            front: stackFrente(),
+            back: stackTraz(),
+            direction: FlipDirection.VERTICAL,
+          ),
+          onTap: () {},
         ),
       ),
     );
